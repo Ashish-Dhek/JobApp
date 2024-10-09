@@ -18,7 +18,7 @@ const PostJob = () => {
   const [fixedSalary, setFixedSalary] = useState("");
   const [salaryType, setSalaryType] = useState("default");
 
-  const { isAuthorized, user } = useContext(Context);
+  const { isAuthorized, user, url } = useContext(Context);
 
   const handleJobPost = async (e) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ const PostJob = () => {
     }
     await axios
       .post(
-        "http://localhost:4000/api/v1/job/post",
+        url+"api/v1/job/post",
         fixedSalary.length >= 4
           ? {
               title,

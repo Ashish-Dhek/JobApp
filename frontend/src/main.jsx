@@ -9,6 +9,7 @@ export const Context = createContext({
 const AppWrapper = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [user, setUser] = useState({});
+  const  url="http://localhost:4000/";
 
   return (
     <Context.Provider
@@ -17,6 +18,7 @@ const AppWrapper = () => {
         setIsAuthorized,
         user,
         setUser,
+        url,
       }}
     >
       <App />

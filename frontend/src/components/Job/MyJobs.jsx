@@ -11,7 +11,7 @@ const MyJobs = () => {
 
   const [myJobs, setMyJobs] = useState([]);
   const [editingMode, setEditingMode] = useState(null);
-  const { isAuthorized, user } = useContext(Context);
+  const { isAuthorized, user, url } = useContext(Context);
 
   const navigateTo = useNavigate();
   //Fetching all jobs
@@ -19,7 +19,7 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/job/getmyjobs",
+          url+"api/v1/job/getmyjobs",
           { withCredentials: true }
         );
         setMyJobs(data.myjobs);
