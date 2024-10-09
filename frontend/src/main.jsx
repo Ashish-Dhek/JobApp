@@ -9,7 +9,7 @@ export const Context = createContext({
 const AppWrapper = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [user, setUser] = useState({});
-  const  url="https://jobseekerbackend-vw8r.onrender.com";
+  const  url="https://jobseekerbackend-vw8r.onrender.com/";
 
   return (
     <Context.Provider
